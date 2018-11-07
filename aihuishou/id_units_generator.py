@@ -148,7 +148,7 @@ def generate_id_units(id_options, base_infos, qx_id='2124'):      #生成所有�
 		return id_units
 		
 	else:
-		if id_options[0][0] == qx_id:              #如果首项为全新机，则用第二项与基本信息组合生成所有靓机的估价id组合
+		if id_options[0][0] == qx_id:              #如果选项中首项为全新机，则用第二项与基本信息组合生成所有靓机的估价id组合
 			
 			for base_info in base_infos:                
 				base_info_unit = base_info + id_options[1]
