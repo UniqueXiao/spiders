@@ -5,7 +5,7 @@ import requests
 from lxml import etree
 import json
 import time
-from CrawlIdUnits import get_ids_all
+from id_units_generator import get_ids_all
 
 
 root_url = 'https://www.aihuishou.com'
