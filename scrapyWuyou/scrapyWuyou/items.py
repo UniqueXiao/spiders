@@ -18,4 +18,3 @@ class ScrapywuyouItem(scrapy.Item):
 	job_welfare = scrapy.Field()
 	#job_msg = scrapy.Field()
 	#job_demands = scrapy.Field()
-	
