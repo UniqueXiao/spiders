@@ -6,6 +6,8 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymysql
 from twisted.enterprise import adbapi   # 通过pymysql+twisted异步保存到MySQL
+import logging
+logger = logging.getLogger(__name__)
 
 class ScrapywuyouPipeline(object):
 	def __init__(self, dbpool):
@@ -38,11 +40,11 @@ class ScrapywuyouPipeline(object):
 	def _conditional_insert(self, cursor, item):
 		# 执行具体的插入
 		# print(item['position'])
-		sql = "INSERT INTO wuyou_test (position, salary, company, job_tag, job_welfare) VALUES (%s, %s, %s, %s, %s)"
-		params = (item['position'], item['salary'], item['company'], item['job_tag'], item['job_welfare'])
+		sql = "INSERT INTO wuyou_test (position, salary, company, job_tag, job_welfare, job_category, job_msg) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+		params = (item['position'], item['salary'], item['company'], item['job_tag'], item['job_welfare'], item['job_category'], item['job_msg'])
 		cursor.execute(sql, params)
 
 	def _handle_error(self, failue, item, spider):
 		# 处理异步插入的异常
-		print(failue)
-		
+		#print(failue)
+		logger.error(item['url'])
