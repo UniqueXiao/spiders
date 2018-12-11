@@ -14,8 +14,9 @@ BOT_NAME = 'scrapyWuyou'
 SPIDER_MODULES = ['scrapyWuyou.spiders']
 NEWSPIDER_MODULE = 'scrapyWuyou.spiders'
 
-KEYWORDS = [u'数据分析']    # 搜索关键字
-MAX_PAGES = 100         # 最大翻页数
+# 定义搜索关键字和最大爬取页数
+KEYWORDS = [u'数据分析']    
+MAX_PAGES = 2       
 
 # 定义MySQL数据库配置信息
 MYSQL_HOST = '127.0.0.1'
@@ -24,6 +25,11 @@ MYSQL_DB = 'test'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = '123'
 MYSQL_CHARSET = 'utf8'
+
+# 定义logging
+LOG_ENABLED = True
+LOG_FILE = 'wuyouSpider.log'
+LOG_LEVEL = 'ERROR'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
